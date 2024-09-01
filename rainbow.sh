@@ -66,7 +66,7 @@ chmod +x rbo_worker
 
 echo "INDEXER_LOGGER_FILE=./logs/indexer" > $ENV_FILE
 
-./rbo_worker worker --rpc {bitcoin_core_endpoint} --password {bitcoin_core_password} --username {bitcoin_core_username} --start_height $START_HEIGHT
+./rbo_worker worker --rpc http://127.0.0.1:5000 --password {bitcoin_core_password} --username {bitcoin_core_username} --start_height $START_HEIGHT
 
 echo "Setup completed. Make sure to check the JSON file and save your private key."
 
