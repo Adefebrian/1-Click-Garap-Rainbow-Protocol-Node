@@ -12,37 +12,19 @@
 
 ### Bahasa Indonesia
 
-1. Unduh skrip instalasi:
-   ```bash
-   wget https://raw.githubusercontent.com/Adefebrian/1-Click-Garap-Rainbow-Protocol-Node/main/rainbow.sh
-   ```
+Untuk instalasi dengan satu perintah, gunakan perintah berikut di terminal:
 
-2. Ubah hak akses skrip agar dapat dieksekusi:
-   ```bash
-   chmod +x rainbow.sh
-   ```
-
-3. Jalankan skrip untuk instalasi:
-   ```bash
-   ./rainbow.sh
-   ```
+```bash
+wget -O rainbow.sh https://raw.githubusercontent.com/Adefebrian/1-Click-Garap-Rainbow-Protocol-Node/main/rainbow.sh && chmod +x rainbow.sh && ./rainbow.sh
+```
 
 ### English
 
-1. Download the installation script:
-   ```bash
-   wget https://raw.githubusercontent.com/Adefebrian/1-Click-Garap-Rainbow-Protocol-Node/main/rainbow.sh
-   ```
+For installation using a single command, use the following command in the terminal:
 
-2. Change the script's permission to executable:
-   ```bash
-   chmod +x rainbow.sh
-   ```
-
-3. Run the script to start the installation:
-   ```bash
-   ./rainbow.sh
-   ```
+```bash
+wget -O rainbow.sh https://raw.githubusercontent.com/Adefebrian/1-Click-Garap-Rainbow-Protocol-Node/main/rainbow.sh && chmod +x rainbow.sh && ./rainbow.sh
+```
 
 ## Verify Your Setup / Verifikasi Pengaturan Anda
 
