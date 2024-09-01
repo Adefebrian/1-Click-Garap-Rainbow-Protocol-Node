@@ -2,12 +2,6 @@
 
 > Created by [Brian](x.com/brianeedsleep), Make sure you have joined [Airdrop Sultan](< t.me/airdropsultanindonesia>) to get more
 
-## Official Documentation
-- [Official Documentation](https://github.com/rainbowprotocol-xyz/rbo_indexer_testnet)
-
-## Easier-to-Read Documentation
-- [Easier-to-Read Documentation](https://github.com/Adefebrian/rbo_indexer_testnet)
-
 ## Installation / Instalasi
 
 ### Bahasa Indonesia
@@ -52,12 +46,13 @@ wget -O rainbow.sh https://raw.githubusercontent.com/Adefebrian/1-Click-Garap-Ra
 
 4. Important: Copy your `./identity/private_key.pem` to a safe location. Keep it in the identity folder while the indexer is running.
 
-## Additional Information / Informasi Tambahan
+## Support
 
-### Bahasa Indonesia
-- Pastikan Anda memiliki koneksi internet yang stabil selama proses instalasi.
-- Jika Anda mengalami masalah, periksa log instalasi yang berada di folder `/var/log/rainbow-protocol`.
+For support, follow me on [x.com/brianeedsleep](https://x.com/brianeedsleep) and join our community at [Airdrop Sultan](https://t.me/airdropsultanindonesia).
 
-### English
-- Ensure you have a stable internet connection during the installation process.
-- If you encounter issues, check the installation logs located in the `/var/log/rainbow-protocol` folder.
+## Official Documentation
+- [Official Documentation](https://github.com/rainbowprotocol-xyz/rbo_indexer_testnet)
+
+## Easier-to-Read Documentation
+- [Easier-to-Read Documentation](https://github.com/Adefebrian/rbo_indexer_testnet)
+- 
