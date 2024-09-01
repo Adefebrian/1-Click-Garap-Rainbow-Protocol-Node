@@ -2,8 +2,6 @@
 
 > Created by [Brian](x.com/brianeedsleep), Make sure you have joined [Airdrop Sultan](< t.me/airdropsultanindonesia>) to get more
 
-[Read in Bahasa Indonesia](./README-ID.md) | [Read in English](./README-EN.md)
-
 ## Official Documentation
 - [Official Documentation](https://github.com/rainbowprotocol-xyz/rbo_indexer_testnet)
 
