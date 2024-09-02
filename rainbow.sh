@@ -86,7 +86,7 @@ chmod +x rbo_worker
 
 echo "INDEXER_LOGGER_FILE=./logs/indexer" > $ENV_FILE
 
-./rbo_worker worker --rpc $RPC_URL --password $RPC_PASSWORD --username $RPC_USER --start_height $START_HEIGHT
+./rbo_worker worker --rpc http://127.0.0.1:5000 --password demo --username demo --start_height $START_HEIGHT
 
 echo "Setup completed. Make sure to check the JSON file and save your private key."
 
