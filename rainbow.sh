@@ -8,7 +8,7 @@ echo -e "${CYAN}${BOLD}*     1 Click Garap Rainbow Protocol by           *${NC}"
 echo -e "${CYAN}${BOLD}*               Airdrop Sultan                    *${NC}"
 echo ""
 echo -e "${YELLOW}${BOLD}This entire code is created by Brian (x.com/brianeedsleep)${NC}"
-echo -e "${YELLOW}${BOLD}Make sure you have joined Airdrop Sultan at t.me/airdropsultanindonesia${NC}"
+echo -e "${YELLOW}${BOLD}Make sure you have joined t.me/airdropsultanindonesia${NC}"
 echo ""
 
 # Option to choose RPC credentials
