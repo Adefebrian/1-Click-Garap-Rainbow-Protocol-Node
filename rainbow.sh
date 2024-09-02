@@ -10,11 +10,31 @@ echo ""
 echo -e "${YELLOW}${BOLD}This entire code is created by Brian (x.com/brianeedsleep)${NC}"
 echo -e "${YELLOW}${BOLD}Make sure you have joined Airdrop Sultan at t.me/airdropsultanindonesia${NC}"
 echo ""
-read -p "Enter Bitcoin Core RPC Username: " RPC_USER
-read -sp "Enter Bitcoin Core RPC Password: " RPC_PASSWORD
-echo
-read -p "Enter Bitcoin Core RPC Allow IP (e.g., 127.0.0.1): " RPC_ALLOW_IP
-read -p "Enter Bitcoin Core RPC Port (e.g., 5000): " RPC_PORT
+
+# Option to choose RPC credentials
+echo "Choose how to run the indexer:"
+echo "1. Use custom RPC endpoint and credentials"
+echo "2. Use default credentials (when using docker-compose)"
+read -p "Enter your choice (1 or 2): " CHOICE
+
+case $CHOICE in
+  1)
+    read -p "Enter Bitcoin Core RPC Username: " RPC_USER
+    read -sp "Enter Bitcoin Core RPC Password: " RPC_PASSWORD
+    echo
+    read -p "Enter Bitcoin Core RPC URL (e.g., http://127.0.0.1:5000): " RPC_URL
+    ;;
+  2)
+    RPC_URL="http://127.0.0.1:5000"
+    RPC_USER="demo"
+    RPC_PASSWORD="demo"
+    ;;
+  *)
+    echo "Invalid choice. Exiting."
+    exit 1
+    ;;
+esac
+
 read -p "Enter Start Height (e.g., 42000): " START_HEIGHT
 read -p "Enter Wallet Name: " WALLET_NAME
 
@@ -45,11 +65,11 @@ services:
     container_name: bitcoind
     volumes:
       - /root/project/run_btc_testnet4/data:/root/.bitcoin/
-    command: ["bitcoind", "-testnet4", "-server", "-rpcuser=$RPC_USER", "-rpcpassword=$RPC_PASSWORD", "-rpcallowip=$RPC_ALLOW_IP", "-rpcport=$RPC_PORT"]
+    command: ["bitcoind", "-testnet4", "-server", "-txindex", "-rpcuser=demo", "-rpcpassword=demo", "-rpcallowip=0.0.0.0/0", "-rpcbind=0.0.0.0:5000"]
     ports:
       - "8333:8333"
       - "48332:48332"
-      - "$RPC_PORT:$RPC_PORT"
+      - "5000:5000"
 EOF
 
 cat $DOCKER_COMPOSE_FILE
@@ -58,7 +78,7 @@ docker-compose up -d
 
 sleep 30
 
-docker exec -it bitcoind /bin/bash -c "bitcoin-cli -testnet4 -rpcuser=$RPC_USER -rpcpassword=$RPC_PASSWORD -rpcport=$RPC_PORT createwallet $WALLET_NAME"
+docker exec -it bitcoind /bin/bash -c "bitcoin-cli -testnet4 -rpcuser=demo -rpcpassword=demo -rpcport=5000 createwallet $WALLET_NAME"
 docker exec -it bitcoind /bin/bash -c "exit"
 
 wget $INDEXER_URL
@@ -66,7 +86,7 @@ chmod +x rbo_worker
 
 echo "INDEXER_LOGGER_FILE=./logs/indexer" > $ENV_FILE
 
-./rbo_worker worker --rpc http://127.0.0.1:5000 --password {bitcoin_core_password} --username {bitcoin_core_username} --start_height $START_HEIGHT
+./rbo_worker worker --rpc $RPC_URL --password $RPC_PASSWORD --username $RPC_USER --start_height $START_HEIGHT
 
 echo "Setup completed. Make sure to check the JSON file and save your private key."
 
